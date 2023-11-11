@@ -2,24 +2,31 @@
 
 ### Instructor : InstructorDetail => 1 : 1
   - Fetch - Eager
-  - Cascade - set to Detach/Merge/Persiste/Refresh
+  - Cascade 
+    - Instructor -> InstructorDetail : All
+    - InstructorDetail -> Instructor : Set to Detach/Merge/Persist/Refresh
   - Caution: when delete instructorDetail => should set instructor's instructDetail to null first
 
 
 ### Instructor : Course => 1 : m  
   - Fetch - Lazy
-  - Cascade - set to Detach/Merge/Persiste/Refresh, not including Delete
+  - Cascade
+    - Instructor -> Course : Set to Detach/Merge/Persist/Refresh, not including Delete
+    - Course -> Instructor : Set to Detach/Merge/Persist/Refresh, not including Delete
   - Caution: when delete instructor => should set all courses' instructor to null first
 
 
 ### Student : Course =>  m : m
   - Fetch - Lazy
-  - Cascade - set to Detach/Merge/Persiste/Refresh, not including Delete
+  - Cascade
+    - Student -> Course : Set to Detach/Merge/Persist/Refresh, not including Delete
+    - Course -> Student : Set to Detach/Merge/Persist/Refresh, not including Delete
 
 
 ### Course : Review => 1 : m
   - Fetch - Lazy
-  - Cascade - set to all including Delete
+  - Cascade 
+    - Course -> Review : Set to all including Delete
 
 
 ====================
