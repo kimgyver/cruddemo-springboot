@@ -7,7 +7,7 @@
 
 
 ### Instructor : Course => 1 : m  
-  - Fetch - Laszy
+  - Fetch - Lazy
   - Cascade - set to Detach/Merge/Persiste/Refresh, not including Delete
   - Caution: when delete instructor => should set all courses' instructor to null first
 
