@@ -1,18 +1,22 @@
 # cruddemo-springboot
 
 * Instructor : InstructorDetail => 1 : 1
+
 - Fetch - Eager
 - Cascade - set to Detach/Merge/Persiste/Refresh
   - caution: when delete instructorDetail => should set instructor's instructDetail to null first
+
 
 * Instructor : Course => 1 : m  
 - Fetch - Laszy
 - Cascade - set to Detach/Merge/Persiste/Refresh, not including Delete
   - caution: when delete instructor => should set all courses' instructor to null first
 
+
 * Student : Course =>  m : m
 - Fetch - Lazy
 - Cascade - set to Detach/Merge/Persiste/Refresh, not including Delete
+
 
 * Course : Review => 1 : m
 - Fetch - Lazy
